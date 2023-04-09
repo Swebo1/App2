@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackLayout>
+            <Label Text="Главная страница" HorizontalOptions="CenterAndExpand" FontSize="Large" Margin="0,50,0,20" />
+            <Button Text="Ввести данные" Clicked="OnShowPopupClicked" Margin="0,20,0,0" />
+        </StackLayout>
+
+        <!-- Заголовок экрана -->
+        <Label x:Name="DailyCalorieIntakeLabel" 
+               Text="Ваша норма — ккал." 
+               FontSize="Large"
+               Margin="20"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Grid.Row="0"/>
+
+        <!-- Главное содержимое экрана -->
+        <StackLayout Grid.Row="1" Margin="20">
+
+            <!-- Количество калорий, которое осталось -->
+            <Label x:Name="CaloriesLeftLabel" 
+                   Text="У вас осталось — ккал." 
+                   FontSize="Medium"
+                   Margin="0,10,0,0"/>
+
+            <!-- Текущее количество потребленных калорий -->
+            <Label x:Name="CaloriesConsumedLabel" 
+                   Text="Вы потребили — ккал." 
+                   FontSize="Medium"
+                   Margin="0,10,0,0"/>
+
+            <!-- Окно для ввода количества потребленных калорий -->
+            <Entry x:Name="CaloriesEntry" 
+                   Placeholder="Введите количество потребленных калорий"
+                   Margin="0,10,0,0"
+                   Completed="OnCaloriesEntered"/>
+        </StackLayout>
+        
+
+    </Grid>
+
+</ContentPage>
